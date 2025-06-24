@@ -1,0 +1,87 @@
+/* Contenedor principal del navbar */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 4rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo + título */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-icon {
+  width: 32px;
+  height: auto;
+}
+
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+/* Contenedor de links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #084298;
+}
+
+/* Botón cerrar sesión */
+.logout-button {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .nav-links a,
+  .logout-button {
+    font-size: 17px;
+  }
+}

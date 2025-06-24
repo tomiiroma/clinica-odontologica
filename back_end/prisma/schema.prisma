@@ -1,0 +1,200 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")  // Usamos la URL de la base de datos configurada en .env
+}
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model PlanAfiliacion {
+  id_plan         Int        @id @default(autoincrement())
+  tipo_plan       String
+  nombre_convenio String?
+  porcentaje_desc Float?
+
+  afiliados       Afiliado[]
+}
+
+model Afiliado {
+  id_afiliado      Int              @id @default(autoincrement())
+  dni              String           @unique
+  nombre           String
+  apellido         String
+  fecha_nacimiento DateTime
+  sexo             String
+  direccion        String?
+  telefono_fijo    String?
+  telefono_movil   String
+  email            String   @unique
+  contraseña       String           // ⬅️ AGREGAR ESTA LÍNEA
+  id_plan          Int?
+
+  plan             PlanAfiliacion? @relation(fields: [id_plan], references: [id_plan])
+  historiaClinica  HistoriaClinica?
+  turnos           Turno[]
+  pagos            Pago[]
+  notificaciones   Notificacion[]
+}
+
+model HistoriaClinica {
+  id_historia             Int           @id @default(autoincrement())
+  id_afiliado             Int           @unique
+  observaciones_generales String?
+  fecha_creacion          DateTime
+
+  afiliado                Afiliado      @relation(fields: [id_afiliado], references: [id_afiliado])
+  turnos                  Turno[]
+  tratamientos            Tratamiento[]
+}
+
+model Especialidad {
+  id_especialidad Int          @id @default(autoincrement())
+  nombre           String       @unique
+
+  odontologos      Odontologo[]
+}
+
+model Odontologo {
+  id_odontologo    Int               @id @default(autoincrement())
+  nombre           String
+  apellido         String
+  email            String            @unique
+  contraseña       String            // ⬅️ AGREGAR ESTA LÍNEA
+  telefono         String?
+  id_especialidad  Int?
+
+  especialidad     Especialidad?     @relation(fields: [id_especialidad], references: [id_especialidad])
+  horarios         HorarioAtencion[]
+  turnos           Turno[]
+  tratamientos     Tratamiento[]
+}
+
+
+model Sede {
+  id_sede  Int           @id @default(autoincrement())
+  nombre   String
+  ciudad   String
+  calle    String
+  numero   String
+
+  consultorios Consultorio[]
+  horarios     HorarioAtencion[]
+}
+
+model Consultorio {
+  id_consultorio Int           @id @default(autoincrement())
+  numero         Int
+  id_sede        Int
+
+  sede           Sede         @relation(fields: [id_sede], references: [id_sede])
+  equipamientos  Equipamiento[]
+  turnos         Turno[]
+}
+
+model Equipamiento {
+  id_equipamiento         Int    @id @default(autoincrement())
+  numero_serie            String @unique
+  descripcion             String?
+  cantidad                Int
+  ultima_fecha_mantenimiento DateTime?
+  id_consultorio          Int
+
+  consultorio             Consultorio @relation(fields: [id_consultorio], references: [id_consultorio])
+}
+
+model HorarioAtencion {
+  id_horario   Int        @id @default(autoincrement())
+  dia_semana   String
+  hora_inicio  DateTime
+  hora_fin     DateTime
+  id_odontologo Int
+  id_sede       Int
+
+  odontologo   Odontologo @relation(fields: [id_odontologo], references: [id_odontologo])
+  sede         Sede       @relation(fields: [id_sede], references: [id_sede])
+}
+
+model Turno {
+  id_turno      Int        @id @default(autoincrement())
+  fecha         DateTime
+  hora          DateTime
+  id_afiliado   Int
+  id_odontologo Int
+  id_consultorio Int
+  id_historia   Int
+
+  afiliado      Afiliado    @relation(fields: [id_afiliado], references: [id_afiliado])
+  odontologo    Odontologo  @relation(fields: [id_odontologo], references: [id_odontologo])
+  consultorio   Consultorio @relation(fields: [id_consultorio], references: [id_consultorio])
+  historiaClinica HistoriaClinica @relation(fields: [id_historia], references: [id_historia])
+}
+
+model Tratamiento {
+  id_tratamiento Int        @id @default(autoincrement())
+  nombre         String
+  descripcion    String?
+  costo          Float
+  fecha_inicio   DateTime
+  finalizado     Boolean    @default(false)
+  id_odontologo  Int
+  id_historia    Int
+
+  odontologo     Odontologo      @relation(fields: [id_odontologo], references: [id_odontologo])
+  historiaClinica HistoriaClinica @relation(fields: [id_historia], references: [id_historia])
+  insumos         TratamientoInsumo[]
+  pagos           Pago[]
+}
+
+model Insumo {
+  id_insumo     Int                  @id @default(autoincrement())
+  nombre        String
+  descripcion   String?
+  cantidad      Int
+
+  tratamientos  TratamientoInsumo[]
+}
+
+model TratamientoInsumo {
+  id_tratamiento Int
+  id_insumo      Int
+  cantidad_usada Int
+
+  tratamiento    Tratamiento @relation(fields: [id_tratamiento], references: [id_tratamiento])
+  insumo         Insumo      @relation(fields: [id_insumo], references: [id_insumo])
+
+  @@id([id_tratamiento, id_insumo])
+}
+
+model Pago {
+  id_pago       Int        @id @default(autoincrement())
+  monto         Float
+  fecha_pago    DateTime
+  metodo_pago   String
+  id_afiliado   Int
+  id_tratamiento Int
+
+  afiliado      Afiliado    @relation(fields: [id_afiliado], references: [id_afiliado])
+  tratamiento   Tratamiento @relation(fields: [id_tratamiento], references: [id_tratamiento])
+}
+
+model Notificacion {
+  id_notificacion Int     @id @default(autoincrement())
+  mensaje         String
+  fecha_envio     DateTime
+  id_afiliado     Int
+
+  afiliado        Afiliado @relation(fields: [id_afiliado], references: [id_afiliado])
+}
+
+
+model Administrador {
+  id_administrador Int      @id @default(autoincrement())
+  nombre           String
+  apellido         String
+  email            String   @unique
+  contraseña       String
+  creado_en        DateTime @default(now())
+}

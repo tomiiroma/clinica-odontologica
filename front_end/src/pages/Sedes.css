@@ -1,0 +1,89 @@
+/* Página completa */
+.sedes-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.sedes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+/* Título */
+.sedes-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1e5cff;
+  font-style: italic;
+  margin-bottom: 48px;
+}
+
+/* Mapa */
+.sedes-mapa {
+  border: 2px solid #1e5cff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.sedes-mapa img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lista de sedes */
+.sedes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Tarjeta individual */
+.sede-card {
+  background-color: white;
+  border: 2px solid #1e5cff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Texto */
+.sede-info {
+  flex: 1;
+}
+
+.sede-info h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e5cff;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.sede-info p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.sede-info span {
+  font-weight: bold;
+  font-style: italic;
+  color: #1e5cff;
+}
+
+/* Imagen */
+.sede-imagen {
+  width: 100%;
+  max-width: 400px;
+  height: 190px;
+  border-radius: 12px;
+  object-fit: cover;
+}
