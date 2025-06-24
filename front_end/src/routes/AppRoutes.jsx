@@ -7,6 +7,7 @@ import DashboardAdmin from '../pages/dashboardadmin/dashboardadmin'
 import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliado'
 import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
 import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
+import OdontologoDashboard from '../pages/OdontologoDashboard';
 
 import ProtectedRoute from '../auth/ProtectedRoute'
 import AdminLayout from '../layouts/adminLayout'
@@ -39,8 +40,7 @@ export default function AppRoutes() {
 
 
         </Route>
-
-
+        <Route path="/odontologos-dashboard" element={<OdontologoDashboard />} />
 
       </Routes>
     </BrowserRouter>

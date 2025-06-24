@@ -3,7 +3,10 @@ const prisma = new PrismaClient()
 
 import {
   crearOdontologo,
-  listarOdontologos
+  listarOdontologos,
+  buscarOdontologoPorId,
+  actualizarOdontologo,
+  eliminarOdontologo
 } from './odontologo.service.js'
 
 import bcrypt from 'bcryptjs'
@@ -37,4 +40,39 @@ export const registrarOdontologo = async (req, res) => {
 export const obtenerOdontologos = async (req, res) => {
   const lista = await listarOdontologos()
   res.json(lista)
+}
+
+export const obtenerOdontologoPorId = async (req, res) => {
+  const { id } = req.params
+  try {
+    const odontologo = await buscarOdontologoPorId(Number(id))
+    if (!odontologo) return res.status(404).json({ mensaje: 'No encontrado' })
+    res.json(odontologo)
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
+
+export const actualizarOdontologoController = async (req, res) => {
+  const { id } = req.params
+  const data = req.body
+  try {
+    if (data.contraseña) {
+      data.contraseña = await bcrypt.hash(data.contraseña, 10)
+    }
+    const actualizado = await actualizarOdontologo(Number(id), data)
+    res.json(actualizado)
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
+
+export const eliminarOdontologoController = async (req, res) => {
+  const { id } = req.params
+  try {
+    await eliminarOdontologo(Number(id))
+    res.json({ mensaje: 'Odontólogo eliminado' })
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
 }

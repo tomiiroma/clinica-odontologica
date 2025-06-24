@@ -12,3 +12,15 @@ export const listarOdontologos = () => {
 export const buscarOdontologoPorEmail = (email) => {
   return prisma.odontologo.findUnique({ where: { email } })
 }
+
+export const buscarOdontologoPorId = (id) => {
+  return prisma.odontologo.findUnique({ where: { id_odontologo: id } })
+}
+
+export const actualizarOdontologo = (id, data) => {
+  return prisma.odontologo.update({ where: { id_odontologo: id }, data })
+}
+
+export const eliminarOdontologo = (id) => {
+  return prisma.odontologo.delete({ where: { id_odontologo: id } })
+}
