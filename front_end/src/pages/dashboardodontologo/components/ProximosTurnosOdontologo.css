@@ -1,0 +1,32 @@
+.turnos {
+  flex: 1;
+}
+
+.turnos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.turnos li {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.estado {
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.estado.confirmado {
+  color: green;
+}
+
+.estado.pendiente {
+  color: orange;
+}
+
+.desc {
+  font-size: 13px;
+  color: #777;
+}

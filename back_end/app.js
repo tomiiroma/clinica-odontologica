@@ -23,6 +23,7 @@ import especialidadRoutes from './modules/especialidad/especialidad.routes.js'
 import historiaClinicaRoutes from './modules/historia_clinica/historia_clinica.routes.js'
 import tratamientoInsumoRoutes from './modules/tratamiento_insumo/tratamiento_insumo.routes.js'
 import dashboardAdminRoutes from './modules/dashboardAdmin/dashboardAdmin.routes.js'
+import dashboardOdontologoRoutes from './modules/dashboardOdontologo/dashboard.routes.js'
 
 
 
@@ -53,6 +54,7 @@ app.use('/api/especialidades', especialidadRoutes)
 app.use('/api/historias-clinicas', historiaClinicaRoutes)
 app.use('/api/tratamiento-insumo', tratamientoInsumoRoutes)
 app.use('/api/dashboard-admin', dashboardAdminRoutes)
+app.use('/api/dashboard-odontologo', dashboardOdontologoRoutes)
 
 
 export default app

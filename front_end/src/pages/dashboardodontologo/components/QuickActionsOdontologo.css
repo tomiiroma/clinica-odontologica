@@ -1,0 +1,45 @@
+.quick-actions {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quick-actions h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.azul {
+  background: #3b82f6;
+}
+
+.btn.verde {
+  background: #10b981;
+}
+
+.btn.violeta {
+  background: #a855f7;
+}
