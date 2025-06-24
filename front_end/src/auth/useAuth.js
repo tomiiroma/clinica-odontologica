@@ -18,4 +18,4 @@ export function useAuth() {
     console.error("Token inválido o corrupto", error)
     return { isLoggedIn: false, user: null, rol: null }
   }
-} 
+}

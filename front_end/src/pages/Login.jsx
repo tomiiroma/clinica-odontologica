@@ -1,12 +1,21 @@
 "use client"
 
 import { useState } from "react"
+import { Navigate } from "react-router-dom"
 import { User, Lock } from "lucide-react"
-import "./Login.css"
+import { useAuth } from "../auth/useAuth"
+import "../styles/Login.css"
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 export default function LoginForm() {
+  const { isLoggedIn, rol } = useAuth()
+
+  // Si ya hay sesión activa, redirigir
+  if (isLoggedIn) {
+    return <Navigate to={`/dashboard-${rol}`} replace />
+  }
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [remember, setRemember] = useState(false)

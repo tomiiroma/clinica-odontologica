@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import "./Tratamientos.css"; // si querés usar CSS externo
+import "../styles/Tratamientos.css"; // si querés usar CSS externo
 
 const Tratamientos = () => {
   const tratamientos = [
