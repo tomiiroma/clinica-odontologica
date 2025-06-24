@@ -1,0 +1,17 @@
+.dashboard-afiliado {
+  padding: 32px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}

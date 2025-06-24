@@ -1,0 +1,42 @@
+.card-af {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-af h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #16a34a;
+}
+
+.card-af li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-af .estado {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.card-af .estado.completado {
+  color: #3b82f6;
+}
+
+.card-af .estado.en\ curso {
+  color: #22c55e;
+}
+
+.card-af a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3b82f6;
+  font-size: 14px;
+  text-decoration: underline;
+}

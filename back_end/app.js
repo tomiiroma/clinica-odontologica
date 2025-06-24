@@ -24,6 +24,7 @@ import historiaClinicaRoutes from './modules/historia_clinica/historia_clinica.r
 import tratamientoInsumoRoutes from './modules/tratamiento_insumo/tratamiento_insumo.routes.js'
 import dashboardAdminRoutes from './modules/dashboardAdmin/dashboardAdmin.routes.js'
 import dashboardOdontologoRoutes from './modules/dashboardOdontologo/dashboard.routes.js'
+import dashboardAfiliadoRoutes from './modules/dashboardAfiliado/dashboardAfiliado.routes.js'
 
 
 
@@ -55,6 +56,7 @@ app.use('/api/historias-clinicas', historiaClinicaRoutes)
 app.use('/api/tratamiento-insumo', tratamientoInsumoRoutes)
 app.use('/api/dashboard-admin', dashboardAdminRoutes)
 app.use('/api/dashboard-odontologo', dashboardOdontologoRoutes)
+app.use('/api/dashboard-afiliado', dashboardAfiliadoRoutes)
 
 
 export default app

@@ -30,6 +30,7 @@ export const registrarAfiliado = async (req, res) => {
   }
 }
 
+
 export const obtenerAfiliados = async (req, res) => {
   const lista = await listarAfiliados()
   res.json(lista)

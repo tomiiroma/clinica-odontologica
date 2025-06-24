@@ -16,6 +16,11 @@ import AdminLayout from '../layouts/adminLayout'
 import GestorPlanAfiliacion from '../pages/dashboardadmin/gestorPlanAfiliacion/GestorPlanAfiliacion'
 import OdontologoLayout from "../layouts/OdontologoLayout"
 
+import AfiliadoLayout from "../layouts/afiliadoLayout"
+
+import DashboardAfiliado from '../pages/dashboardafiliado/DashboardAfiliado'
+
+
 
 
 
@@ -55,12 +60,18 @@ export default function AppRoutes() {
           }
         >
           <Route index element={<DashboardOdontologo />} />
+        </Route>
 
 
-
-
-
-          
+        <Route
+          path="/dashboard-afiliado"
+          element={
+            <ProtectedRoute allowRoles={['afiliado']}>
+              <AfiliadoLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<DashboardAfiliado />} />
         </Route>
 
 
