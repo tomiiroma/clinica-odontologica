@@ -7,6 +7,7 @@ import DashboardAdmin from '../pages/dashboardadmin/dashboardadmin'
 import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliado'
 import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
 import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
+import GestorOdontologo from '../pages/dashboardadmin/GestorOdontologo/GestorOdontologo';
 import OdontologoDashboard from '../pages/OdontologoDashboard';
 
 import ProtectedRoute from '../auth/ProtectedRoute'
@@ -35,7 +36,7 @@ export default function AppRoutes() {
           <Route path="afiliados" element={<GestorAfiliado />} />
           <Route path="sedes" element={<GestorSedes />} />
           <Route path="tratamientos" element={<GestorTratamientos />} />
-          <Route path="odontologos" element={<OdontologoDashboard />} />
+          <Route path="odontologos" element={<GestorOdontologo />} />
 
 
 

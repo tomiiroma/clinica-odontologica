@@ -1,0 +1,28 @@
+.gestor-odontologo {
+  padding: 30px;
+}
+.gestor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.btn-nuevo {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.gestor-busqueda {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.gestor-busqueda input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

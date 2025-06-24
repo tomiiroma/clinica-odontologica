@@ -9,7 +9,6 @@ import {
 
 const router = express.Router();
 
-// Ruta pública para frontend (sin autenticación)
 router.get('/', obtenerOdontologos);
 router.get('/:id', obtenerOdontologoPorId);
 router.post('/', registrarOdontologo);

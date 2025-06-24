@@ -12,10 +12,9 @@ import {
 import bcrypt from 'bcryptjs'
 
 export const registrarOdontologo = async (req, res) => {
-  const { nombre, apellido, email, telefono, contraseña } = req.body
+  const { nombre, apellido, email, telefono, contraseña, id_especialidad } = req.body
 
   try {
-    // Verificar si ya existe un odontólogo con ese email
     const existente = await prisma.odontologo.findUnique({ where: { email } })
     if (existente) {
       return res.status(400).json({ mensaje: 'El email ya está registrado' })
@@ -28,7 +27,8 @@ export const registrarOdontologo = async (req, res) => {
       apellido,
       email,
       telefono,
-      contraseña: hash
+      contraseña: hash,
+      id_especialidad
     })
 
     res.status(201).json({ id: nuevo.id_odontologo, email: nuevo.email })

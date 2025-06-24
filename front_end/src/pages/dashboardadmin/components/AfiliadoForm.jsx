@@ -6,7 +6,7 @@ export default function AfiliadoForm({ modo = "crear", afiliadoId = null, onClos
   const [formData, setFormData] = useState({
     dni: "", nombre: "", apellido: "", direccion: "",
     telefono_fijo: "", telefono_movil: "", sexo: "", email: "",
-    fecha_nacimiento: "", id_plan: ""
+    fecha_nacimiento: "", id_plan: "",  contraseña: "" 
   })
 
   useEffect(() => {
@@ -60,6 +60,14 @@ export default function AfiliadoForm({ modo = "crear", afiliadoId = null, onClos
         <input name="telefono_fijo" value={formData.telefono_fijo} onChange={handleChange} placeholder="Teléfono fijo" />
         <input name="telefono_movil" value={formData.telefono_movil} onChange={handleChange} placeholder="Teléfono móvil *" required />
         <input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email *" required />
+         <input
+          name="contraseña"
+          type="password"
+          placeholder="Contraseña *"
+          value={formData.contraseña || ""}
+          onChange={handleChange}
+          required
+        />
         <select name="sexo" value={formData.sexo} onChange={handleChange} required>
           <option value="">Seleccionar género</option>
           <option value="M">Masculino</option>

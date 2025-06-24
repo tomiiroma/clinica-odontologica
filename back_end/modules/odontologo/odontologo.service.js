@@ -6,7 +6,9 @@ export const crearOdontologo = (data) => {
 }
 
 export const listarOdontologos = () => {
-  return prisma.odontologo.findMany()
+  return prisma.odontologo.findMany({
+    include: { especialidad: true }
+  })
 }
 
 export const buscarOdontologoPorEmail = (email) => {
@@ -14,7 +16,10 @@ export const buscarOdontologoPorEmail = (email) => {
 }
 
 export const buscarOdontologoPorId = (id) => {
-  return prisma.odontologo.findUnique({ where: { id_odontologo: id } })
+  return prisma.odontologo.findUnique({
+    where: { id_odontologo: id },
+    include: { especialidad: true }
+  })
 }
 
 export const actualizarOdontologo = (id, data) => {
