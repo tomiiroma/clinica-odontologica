@@ -1,0 +1,118 @@
+/* igual al anterior pero aplicable a cualquier rol */
+.sidebar {
+  width: 240px;
+  background-color: #1b2e4b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.sidebar-header h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.sidebar-header p {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #cce5ff;
+}
+
+.sidebar-nav {
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #0b5ed7;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  position: relative;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: #254069;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.user-icon {
+  background-color: white;
+  color: #1b2e4b;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.sidebar-user-email {
+  flex: 1;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-caret {
+  font-size: 10px;
+  color: #fff;
+}
+
+.sidebar-dropdown {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+}
+
+.sidebar-dropdown a,
+.sidebar-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #1b2e4b;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import "./dashboardadmin.css"
 
-import SidebarAdmin from '../../components/sidebaradmin'
+import Sidebar from '../../components/Sidebar'
+import DashboardHeader from "../../components/DashboardHeader"
 
 
 import { Users, Calendar, MapPin, Stethoscope } from "lucide-react"
@@ -30,8 +31,9 @@ export default function DashboardAdmin() {
 
   return (
     <div className="dashboard-wrapper">
-      <SidebarAdmin />
+      <Sidebar/>
       <div className="dashboard-content">
+        <DashboardHeader title="Panel de Control del Administrador" />
         <h1 className="dashboard-title">Panel de Control del Administrador</h1>
         <div className="cards-container">
           {cards.map((c, i) => (
