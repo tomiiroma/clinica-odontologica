@@ -1,0 +1,72 @@
+.quick-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.06);
+}
+
+.quick-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 16px;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.quick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  color: #1b2e4b; /* azul oscuro, por ejemplo */
+}
+
+.quick-btn:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 0 0 1px #007bff22;
+}
+
+.quick-icon {
+  padding: 6px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.quick-btn:nth-child(1) .quick-icon {
+  background-color: #2563eb;
+}
+.quick-btn:nth-child(2) .quick-icon {
+  background-color: #16a34a;
+}
+.quick-btn:nth-child(3) .quick-icon {
+  background-color: #9333ea;
+}
+.quick-btn:nth-child(4) .quick-icon {
+  background-color: #f97316;
+}
+
+.quick-btn strong {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.quick-btn p {
+  font-size: 13px;
+  color: #4b5563;
+}

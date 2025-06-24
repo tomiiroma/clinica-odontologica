@@ -1,0 +1,63 @@
+.recent-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.06);
+}
+
+.recent-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 16px;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.recent-info {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.name, .desc, .time {
+  font-size: 13px;
+  color: #333;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #eee;
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #15803d;
+}
+.badge-yellow {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+.badge-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
