@@ -1,0 +1,116 @@
+.gestor-planAfiliacion {
+  padding: 30px;
+}
+
+.gestor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.btn-nuevo {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gestor-busqueda input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.sede-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.plan-card {
+  display: flex;
+  justify-content: space-between; /* Distribuye info a la izquierda, botones a la derecha */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 16px;
+  align-items: center; /* Centra verticalmente */
+}
+
+.plan-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.sede-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-nombre {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 6px;
+}
+
+.plan-detalle {
+  font-size: 14px;
+  color: #555;
+}
+
+.plan-detalle span {
+  display: block;
+}
+
+.estado {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.plan-footer {
+  display: flex;
+  gap: 10px;
+}
+.plan-footer button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.plan-footer button:hover {
+  background-color: #ced4da;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}

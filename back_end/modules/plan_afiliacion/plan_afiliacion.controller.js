@@ -13,6 +13,8 @@ export const getById = async (req, res) => {
 }
 
 export const create = async (req, res) => {
+    console.log("Body recibido:", req.body);
+
   const nuevo = await crear(req.body)
   res.status(201).json(nuevo)
 }

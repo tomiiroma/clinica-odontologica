@@ -10,6 +10,7 @@ import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/Gesto
 import GestorOdontologo from '../pages/dashboardadmin/GestorOdontologo/GestorOdontologo';
 import ProtectedRoute from '../auth/ProtectedRoute'
 import AdminLayout from '../layouts/adminLayout'
+import GestorPlanAfiliacion from '../pages/dashboardadmin/gestorPlanAfiliacion/GestorPlanAfiliacion'
 
 export default function AppRoutes() {
   return (
@@ -35,6 +36,7 @@ export default function AppRoutes() {
           <Route path="sedes" element={<GestorSedes />} />
           <Route path="tratamientos" element={<GestorTratamientos />} />
           <Route path="odontologos" element={<GestorOdontologo />} />
+          <Route path="planAfiliacion" element={<GestorPlanAfiliacion />} />
 
 
 
