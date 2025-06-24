@@ -8,8 +8,6 @@ import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliad
 import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
 import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
 import GestorOdontologo from '../pages/dashboardadmin/GestorOdontologo/GestorOdontologo';
-import OdontologoDashboard from '../pages/OdontologoDashboard';
-
 import ProtectedRoute from '../auth/ProtectedRoute'
 import AdminLayout from '../layouts/adminLayout'
 
