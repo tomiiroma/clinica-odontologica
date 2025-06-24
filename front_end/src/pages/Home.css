@@ -23,12 +23,13 @@
 
 .hero-content {
   position: relative;
+  padding-left: 140px;
   z-index: 2;
   max-width: 600px;
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 60px;
   margin-bottom: 20px;
 }
 
@@ -122,8 +123,6 @@
 .servicio-card button:hover {
   background-color: #003bbd;
 }
-
-
 
 
 
