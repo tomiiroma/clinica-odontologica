@@ -4,19 +4,17 @@ import Login from '../pages/Login'
 import Sedes from '../pages/Sedes'
 import Tratamientos from '../pages/Tratamientos'
 import DashboardAdmin from '../pages/dashboardadmin/dashboardadmin'
-import ProtectedRoute from '../auth/ProtectedRoute' // el que ya usás
+import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliado'
+import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
+import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
 
+import ProtectedRoute from '../auth/ProtectedRoute'
+import AdminLayout from '../layouts/adminLayout'
 
 export default function AppRoutes() {
   return (
-
-
-
     <BrowserRouter>
       <Routes>
-
-
-
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sedes" element={<Sedes />} />
@@ -24,22 +22,27 @@ export default function AppRoutes() {
 
 
 
+        <Route
+          path="/dashboard-admin"
+          element={
+            <ProtectedRoute allowRoles={['admin']}>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<DashboardAdmin />} />
+          <Route path="afiliados" element={<GestorAfiliado />} />
+          <Route path="sedes" element={<GestorSedes />} />
+          <Route path="tratamientos" element={<GestorTratamientos />} />
 
-      <Route
-        path="/dashboard-admin"
-        element={
-          <ProtectedRoute allowRoles={['admin']}>
-            <DashboardAdmin />
-          </ProtectedRoute>
-        }
-      />
+
+
+
+        </Route>
+
+
 
       </Routes>
-
-
     </BrowserRouter>
-
-
-
   )
 }

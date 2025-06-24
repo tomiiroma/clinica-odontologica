@@ -1,13 +1,31 @@
-// sede routes
-import express from 'express'
-import { getAll, getById, create, update, remove } from './sede.controller.js'
+import express from 'express';
+import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
+import { getAll, getById, create, update, remove } from './sede.controller.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAll)
-router.get('/:id', getById)
-router.post('/', create)
-router.put('/:id', update)
-router.delete('/:id', remove)
+// Configuración de multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dir = 'public/uploads/sedes';
+    fs.mkdirSync(dir, { recursive: true });
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, Date.now() + ext);
+  }
+});
 
-export default router
+const upload = multer({ storage });
+
+// Rutas
+router.get('/', getAll);
+router.get('/:id', getById);
+router.post('/', upload.single('imagen'), create);
+router.put('/:id', upload.single('imagen'), update);
+router.delete('/:id', remove);
+
+export default router;

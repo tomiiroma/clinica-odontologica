@@ -8,7 +8,7 @@ export default function QuickActions() {
       title: "Registrar Afiliado",
       description: "Agregar nuevo paciente al sistema",
       icon: <UserPlus size={16} />,
-      href: "/registro-afiliados",
+      href: "/dashboard-admin/afiliados",
     },
     {
       title: "Programar Turno",

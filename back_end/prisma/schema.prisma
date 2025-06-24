@@ -79,6 +79,8 @@ model Sede {
   ciudad   String
   calle    String
   numero   String
+  imagen_url String?
+
 
   consultorios Consultorio[]
   horarios     HorarioAtencion[]
@@ -137,13 +139,14 @@ model Tratamiento {
   nombre         String
   descripcion    String?
   costo          Float
-  fecha_inicio   DateTime
-  finalizado     Boolean    @default(false)
+  cantidadSesiones Int?
   id_odontologo  Int
-  id_historia    Int
+  id_historia    Int?
+  imagen_url     String? // NUEVO
+
+  historiaClinica HistoriaClinica? @relation(fields: [id_historia], references: [id_historia])
 
   odontologo     Odontologo      @relation(fields: [id_odontologo], references: [id_odontologo])
-  historiaClinica HistoriaClinica @relation(fields: [id_historia], references: [id_historia])
   insumos         TratamientoInsumo[]
   pagos           Pago[]
 }

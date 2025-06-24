@@ -16,13 +16,13 @@ export default function Sidebar() {
       case "admin":
         return [
           { title: "Inicio", href: "/dashboard-admin", icon: <Home size={18} /> },
-          { title: "Pacientes", href: "/afiliados", icon: <Users size={18} /> },
-          { title: "Odontólogos", href: "/odontologos", icon: <Stethoscope size={18} /> },
-          { title: "Turnos", href: "/turnos", icon: <Calendar size={18} /> },
-          { title: "Cobros y Pagos", href: "/reportes", icon: <DollarSign size={18} /> },
-          { title: "Sedes", href: "/sedes", icon: <Building size={18} /> },
-          { title: "Tratamientos", href: "/tratamientos", icon: <ClipboardList size={18} /> },
-          { title: "Equipamiento", href: "/equipamiento", icon: <PenTool size={18} /> },
+          { title: "Afiliados", href: "/dashboard-admin/afiliados", icon: <Users size={18} /> },
+          { title: "Odontólogos", href: "/dashboard-admin/odontologos", icon: <Stethoscope size={18} /> },
+          { title: "Turnos", href: "/dashboard-admin/turnos", icon: <Calendar size={18} /> },
+          { title: "Cobros y Pagos", href: "/dashboard-admin/reportes", icon: <DollarSign size={18} /> },
+          { title: "Sedes", href: "/dashboard-admin/sedes", icon: <Building size={18} /> },
+          { title: "Tratamientos", href: "/dashboard-admin/tratamientos", icon: <ClipboardList size={18} /> },
+          { title: "Equipamiento", href: "/dashboard-admin/equipamiento", icon: <PenTool size={18} /> },
         ]
       case "odontologo":
         return [

@@ -1,10 +1,9 @@
-import express from 'express'
-import { registrarOdontologo } from './odontologo.controller.js'
-import { verifyToken } from '../../auth/middleware/auth.middleware.js'
-import { soloAdmin } from '../../auth/middleware/rol.middleware.js'
+import express from 'express';
+import { obtenerOdontologos } from './odontologo.controller.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/', verifyToken, soloAdmin, registrarOdontologo)
+// Ruta pública para frontend (sin autenticación)
+router.get('/', obtenerOdontologos);
 
-export default router
+export default router;

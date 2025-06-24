@@ -1,28 +1,90 @@
-// tratamiento controller
-import { obtenerTodos, obtenerPorId, crear, actualizar, eliminar } from './tratamiento.service.js'
+import {
+  obtenerTodos as listar,
+  obtenerPorId,
+  crear,
+  actualizarTratamiento,
+  eliminar
+} from './tratamiento.service.js';
 
-export const getAll = async (req, res) => {
-  const items = await obtenerTodos()
-  res.json(items)
-}
-
-export const getById = async (req, res) => {
-  const item = await obtenerPorId(parseInt(req.params.id))
-  if (!item) return res.status(404).json({ mensaje: 'Tratamiento no encontrado' })
-  res.json(item)
-}
+export const obtenerTodos = async (req, res) => {
+  try {
+    const lista = await listar();
+    res.json(lista);
+  } catch (error) {
+    console.error("Error al obtener tratamientos:", error);
+    res.status(500).json({ error: "Error interno al obtener tratamientos" });
+  }
+};
 
 export const create = async (req, res) => {
-  const nuevo = await crear(req.body)
-  res.status(201).json(nuevo)
-}
+  try {
+    const {
+      nombre,
+      descripcion,
+      costo,
+      cantidadSesiones,
+      id_odontologo,
+      id_historia
+    } = req.body;
 
-export const update = async (req, res) => {
-  const actualizado = await actualizar(parseInt(req.params.id), req.body)
-  res.json(actualizado)
-}
+    const imagen_url = req.file
+      ? `/uploads/tratamientos/${req.file.filename}`
+      : null;
 
-export const remove = async (req, res) => {
-  await eliminar(parseInt(req.params.id))
-  res.json({ mensaje: 'Tratamiento eliminado correctamente' })
-}
+    const nuevo = await crear({
+      nombre,
+      descripcion,
+      costo: parseFloat(costo),
+      cantidadSesiones: parseInt(cantidadSesiones),
+      id_odontologo: parseInt(id_odontologo),
+      id_historia: id_historia ? parseInt(id_historia) : null,
+      imagen_url
+    });
+
+    res.status(201).json(nuevo);
+  } catch (error) {
+    console.error("Error al crear tratamiento:", error);
+    res.status(500).json({ error: "Error interno al crear tratamiento" });
+  }
+};
+
+export const actualizar = async (req, res) => {
+  try {
+    const {
+      nombre,
+      descripcion,
+      costo,
+      cantidadSesiones,
+      id_odontologo,
+      id_historia
+    } = req.body;
+
+    const imagen_url = req.file
+      ? `/uploads/tratamientos/${req.file.filename}`
+      : undefined;
+
+    const id = parseInt(req.params.id);
+
+    const data = {
+      nombre,
+      descripcion,
+      costo: parseFloat(costo),
+      cantidadSesiones: parseInt(cantidadSesiones),
+      id_odontologo: parseInt(id_odontologo)
+    };
+
+    if (id_historia) {
+      data.id_historia = parseInt(id_historia);
+    }
+
+    if (imagen_url) {
+      data.imagen_url = imagen_url;
+    }
+
+    const actualizado = await actualizarTratamiento(id, data);
+    res.json(actualizado);
+  } catch (error) {
+    console.error("Error al actualizar tratamiento:", error);
+    res.status(500).json({ error: "Error interno al actualizar tratamiento" });
+  }
+};

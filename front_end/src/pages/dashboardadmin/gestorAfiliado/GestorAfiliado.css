@@ -1,0 +1,51 @@
+
+.gestor-afiliado {
+  padding: 30px;
+}
+
+.gestor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.gestor-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.btn-nuevo {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-nuevo:hover {
+  background-color: #0b5ed7;
+}
+
+.gestor-busqueda {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.gestor-busqueda input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-buscar {
+  background-color: #e2e8f0;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}

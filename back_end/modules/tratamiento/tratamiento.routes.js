@@ -1,13 +1,26 @@
-// tratamiento routes
-import express from 'express'
-import { getAll, getById, create, update, remove } from './tratamiento.controller.js'
+import express from 'express';
+import multer from 'multer';
+import path from 'path';
+import fs from 'fs';
+import { create, obtenerTodos, actualizar } from './tratamiento.controller.js';
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAll)
-router.get('/:id', getById)
-router.post('/', create)
-router.put('/:id', update)
-router.delete('/:id', remove)
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dir = 'public/uploads/tratamientos';
+    fs.mkdirSync(dir, { recursive: true });
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
 
-export default router
+const upload = multer({ storage });
+
+router.get('/', obtenerTodos);
+router.post('/', upload.single('imagen'), create);
+router.put('/:id', upload.single('imagen'), actualizar);
+
+export default router;

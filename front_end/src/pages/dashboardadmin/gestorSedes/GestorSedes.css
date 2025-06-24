@@ -1,0 +1,119 @@
+.gestor-sedes {
+  padding: 30px;
+}
+
+.gestor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.btn-nuevo {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gestor-busqueda input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.sede-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sede-card {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.sede-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.sede-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sede-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sede-nombre {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0d6efd;
+  margin-bottom: 6px;
+}
+
+.sede-detalle {
+  font-size: 14px;
+  color: #555;
+}
+
+.sede-detalle span {
+  display: block;
+}
+
+.estado {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.sede-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.sede-footer button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e9ecef;
+}
+
+.sede-footer button:hover {
+  background-color: #ced4da;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}

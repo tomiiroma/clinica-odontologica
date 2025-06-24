@@ -1,14 +1,14 @@
-/* igual al anterior pero aplicable a cualquier rol */
 .sidebar {
   width: 240px;
   background-color: #1b2e4b;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding: 20px 15px;
   box-sizing: border-box;
 }
+
+
 
 .sidebar-header {
   text-align: center;

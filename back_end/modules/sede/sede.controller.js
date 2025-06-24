@@ -1,28 +1,30 @@
-// sede controller
-import { obtenerTodos, obtenerPorId, crear, actualizar, eliminar } from './sede.service.js'
+import { obtenerTodos, obtenerPorId, crear, actualizar, eliminar } from './sede.service.js';
 
 export const getAll = async (req, res) => {
-  const items = await obtenerTodos()
-  res.json(items)
-}
+  const items = await obtenerTodos();
+  res.json(items);
+};
 
 export const getById = async (req, res) => {
-  const item = await obtenerPorId(parseInt(req.params.id))
-  if (!item) return res.status(404).json({ mensaje: 'Sede no encontrado' })
-  res.json(item)
-}
+  const item = await obtenerPorId(parseInt(req.params.id));
+  if (!item) return res.status(404).json({ mensaje: 'Sede no encontrada' });
+  res.json(item);
+};
 
 export const create = async (req, res) => {
-  const nuevo = await crear(req.body)
-  res.status(201).json(nuevo)
-}
+  const imagen_url = req.file ? `/uploads/sedes/${req.file.filename}` : null;
+  const nueva = await crear({ ...req.body, imagen_url });
+  res.status(201).json(nueva);
+};
 
 export const update = async (req, res) => {
-  const actualizado = await actualizar(parseInt(req.params.id), req.body)
-  res.json(actualizado)
-}
+  const id = parseInt(req.params.id);
+  const imagen_url = req.file ? `/uploads/sedes/${req.file.filename}` : req.body.imagen_url;
+  const actualizado = await actualizar(id, { ...req.body, imagen_url });
+  res.json(actualizado);
+};
 
 export const remove = async (req, res) => {
-  await eliminar(parseInt(req.params.id))
-  res.json({ mensaje: 'Sede eliminado correctamente' })
-}
+  await eliminar(parseInt(req.params.id));
+  res.json({ mensaje: 'Sede eliminada correctamente' });
+};

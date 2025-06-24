@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
 import "./dashboardadmin.css"
-import Sidebar from '../../components/Sidebar'
-import DashboardHeader from "../../components/DashboardHeader"
 import QuickActions from "./components/QuickActions"
 import RecentAppointments from "./components/RecentAppointments"
 import { Users, Calendar, MapPin, Stethoscope } from "lucide-react"
@@ -31,32 +29,28 @@ export default function DashboardAdmin() {
   ] : []
 
   return (
-    <div className="dashboard-wrapper">
-      <Sidebar />
-      <div className="dashboard-content">
-        <DashboardHeader title="Panel de Control del Administrador" />
-        {loading ? (
-          <p>Cargando estadísticas...</p>
-        ) : (
-          <>
-            <div className="cards-container">
-              {cards.map((c, i) => (
-                <div className="stat-card" key={i}>
-                  <div className="stat-card-header">
-                    <span>{c.title}</span>
-                    <div className={`stat-icon ${c.class}`}>{c.icon}</div>
-                  </div>
-                  <div className="stat-value">{c.value}</div>
+    <div>
+      {loading ? (
+        <p>Cargando estadísticas...</p>
+      ) : (
+        <>
+          <div className="cards-container">
+            {cards.map((c, i) => (
+              <div className="stat-card" key={i}>
+                <div className="stat-card-header">
+                  <span>{c.title}</span>
+                  <div className={`stat-icon ${c.class}`}>{c.icon}</div>
                 </div>
-              ))}
-            </div>
-            <div className="dashboard-panels">
-              <QuickActions />
-              <RecentAppointments />
-            </div>
-          </>
-        )}
-      </div>
+                <div className="stat-value">{c.value}</div>
+              </div>
+            ))}
+          </div>
+          <div className="dashboard-panels">
+            <QuickActions />
+            <RecentAppointments />
+          </div>
+        </>
+      )}
     </div>
   )
 }
