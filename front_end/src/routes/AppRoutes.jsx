@@ -35,12 +35,12 @@ export default function AppRoutes() {
           <Route path="afiliados" element={<GestorAfiliado />} />
           <Route path="sedes" element={<GestorSedes />} />
           <Route path="tratamientos" element={<GestorTratamientos />} />
+          <Route path="odontologos" element={<OdontologoDashboard />} />
 
 
 
 
         </Route>
-        <Route path="/odontologos-dashboard" element={<OdontologoDashboard />} />
 
       </Routes>
     </BrowserRouter>
