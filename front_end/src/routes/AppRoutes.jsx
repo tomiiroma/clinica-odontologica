@@ -9,14 +9,17 @@ import DashboardOdontologo from '../pages/dashboardodontologo/DashboardOdontolog
 
 import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliado'
 import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
+import GestorConsultorio from '../pages/dashboardadmin/gestorConsultorios/GestorConsultorios';
+
+
 import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
 import GestorOdontologo from '../pages/dashboardadmin/GestorOdontologo/GestorOdontologo';
 import ProtectedRoute from '../auth/ProtectedRoute'
 import AdminLayout from '../layouts/adminLayout'
+import AfiliadoLayout from "../layouts/afiliadoLayout"
+
 import GestorPlanAfiliacion from '../pages/dashboardadmin/gestorPlanAfiliacion/GestorPlanAfiliacion'
 import OdontologoLayout from "../layouts/OdontologoLayout"
-
-import AfiliadoLayout from "../layouts/afiliadoLayout"
 
 import DashboardAfiliado from '../pages/dashboardafiliado/DashboardAfiliado'
 
@@ -47,6 +50,7 @@ export default function AppRoutes() {
           <Route path="tratamientos" element={<GestorTratamientos />} />
           <Route path="odontologos" element={<GestorOdontologo />} />
           <Route path="planAfiliacion" element={<GestorPlanAfiliacion />} />
+          <Route path="consultorios" element={<GestorConsultorio />} />
 
         </Route>
 
