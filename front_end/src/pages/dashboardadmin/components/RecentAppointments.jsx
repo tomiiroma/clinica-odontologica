@@ -21,6 +21,11 @@ export default function RecentAppointments() {
     }
   }
 
+  const formatEstado = (estado) => {
+    if (!estado || typeof estado !== 'string') return "Sin estado"
+    return estado.charAt(0).toUpperCase() + estado.slice(1)
+  }
+
   return (
     <div className="recent-card">
       <h3>Turnos Recientes</h3>
@@ -35,7 +40,7 @@ export default function RecentAppointments() {
                 <div className="desc">{a.odontologo} • {a.tratamiento}</div>
               </div>
             </div>
-            <span className={getStatusClass(a.estado)}>{a.estado.charAt(0).toUpperCase() + a.estado.slice(1)}</span>
+            <span className={getStatusClass(a.estado)}>{formatEstado(a.estado)}</span>
           </div>
         ))}
       </div>

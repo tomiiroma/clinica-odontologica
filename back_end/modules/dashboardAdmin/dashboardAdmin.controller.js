@@ -1,24 +1,31 @@
 // dashboardAdmin.controller.js
-import { obtenerEstadisticas } from './dashboardAdmin.service.js'
-import { obtenerUltimosTurnos } from './dashboardAdmin.service.js'
 
+import {
+  getResumenDashboard as getResumenDashboardService,
+  getUltimosTurnos as getUltimosTurnosService
+} from './dashboardAdmin.service.js'
 
-export const getUltimosTurnos = async (req, res) => {
+export const getResumenDashboard = async (req, res) => {
   try {
-    const turnos = await obtenerUltimosTurnos()
-    res.json(turnos)
+    const datos = await getResumenDashboardService()
+    return res.json({
+      afiliadosActivos: datos.totalAfiliados,
+      turnosHoy: datos.turnosHoy,
+      totalSedes: datos.totalSedes,
+      totalOdontologos: datos.totalOdontologos
+    })
   } catch (error) {
-    console.error("Error al obtener turnos recientes:", error)
-    res.status(500).json({ error: "Error interno del servidor" })
+    console.error('Error en getResumenDashboard:', error)
+    return res.status(500).json({ message: 'Error al obtener el resumen del dashboard' })
   }
 }
 
-export const getDashboardStats = async (req, res) => {
+export const getUltimosTurnos = async (req, res) => {
   try {
-    const stats = await obtenerEstadisticas()
-    res.json(stats)
+    const turnos = await getUltimosTurnosService()
+    return res.json(turnos)
   } catch (error) {
-    console.error("Error al obtener estadísticas del dashboard:", error)
-    res.status(500).json({ error: "Error interno del servidor" })
+    console.error('Error en getUltimosTurnos:', error)
+    return res.status(500).json({ message: 'Error al obtener los últimos turnos' })
   }
 }

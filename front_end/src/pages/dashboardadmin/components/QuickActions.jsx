@@ -14,19 +14,19 @@ export default function QuickActions() {
       title: "Programar Turno",
       description: "Asignar nueva cita médica",
       icon: <Calendar size={16} />,
-      href: "/turnos",
+      href: "/dashboard-admin/turnos",
     },
     {
       title: "Generar Reporte",
       description: "Crear informe administrativo",
       icon: <FileText size={16} />,
-      href: "/reportes",
+      href: "/dashboard-admin/reportes",
     },
     {
       title: "Configuración",
       description: "Ajustar parámetros del sistema",
       icon: <Settings size={16} />,
-      href: "/configuracion",
+      href: "/dashboard-admin/configuracion",
     },
   ]
 
