@@ -1,0 +1,53 @@
+
+.gestor-turnos {
+  background-color: #f6f9ff;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.gestor-turnos h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gestor-turnos table {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.gestor-turnos th, .gestor-turnos td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.gestor-turnos th {
+  background-color: #f0f4f8;
+}
+
+.gestor-turnos td button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.gestor-turnos td button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.gestor-turnos td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}

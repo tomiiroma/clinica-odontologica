@@ -122,16 +122,17 @@ model HorarioAtencion {
 model Turno {
   id_turno      Int        @id @default(autoincrement())
   fecha         DateTime
-  hora          DateTime
   id_afiliado   Int
   id_odontologo Int
   id_consultorio Int
-  id_historia   Int
+  id_historia   Int?
+  estado         String?   // ✔ si lo agregaste
+
 
   afiliado      Afiliado    @relation(fields: [id_afiliado], references: [id_afiliado])
   odontologo    Odontologo  @relation(fields: [id_odontologo], references: [id_odontologo])
   consultorio   Consultorio @relation(fields: [id_consultorio], references: [id_consultorio])
-  historiaClinica HistoriaClinica @relation(fields: [id_historia], references: [id_historia])
+  historiaClinica HistoriaClinica? @relation(fields: [id_historia], references: [id_historia])
 }
 
 model Tratamiento {
