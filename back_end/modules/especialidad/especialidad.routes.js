@@ -1,4 +1,4 @@
-// especialidad routes
+// back_end/modules/especialidad/especialidad.routes.js
 import express from 'express'
 import { getAll, getById, create, update, remove } from './especialidad.controller.js'
 

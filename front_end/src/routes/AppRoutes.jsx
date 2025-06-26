@@ -11,6 +11,7 @@ import GestorAfiliado from '../pages/dashboardadmin/gestorAfiliado/GestorAfiliad
 import GestorSedes from '../pages/dashboardadmin/gestorSedes/GestorSedes';
 import GestorConsultorio from '../pages/dashboardadmin/gestorConsultorios/GestorConsultorios';
 import GestorTurnos from '../pages/dashboardadmin/gestorTurnos/GestorTurnos';
+import ListaEspecialidades from '../pages/dashboardadmin/gestorEspecialidades/ListaEspecialidades'
 
 
 import GestorTratamientos from '../pages/dashboardadmin/gestorTratamientos/GestorTratamientos';
@@ -53,6 +54,7 @@ export default function AppRoutes() {
           <Route path="planAfiliacion" element={<GestorPlanAfiliacion />} />
           <Route path="consultorios" element={<GestorConsultorio />} />
           <Route path="turnos" element={<GestorTurnos />} />
+          <Route path="especialidades" element={<ListaEspecialidades />} />
 
 
         </Route>

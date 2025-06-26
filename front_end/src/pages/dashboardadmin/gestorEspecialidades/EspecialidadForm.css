@@ -1,0 +1,46 @@
+/* front_end/src/pages/dashboardadmin/gestorEspecialidades/EspecialidadForm.css */
+.form-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 300px;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.btn-save {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+.btn-cancel {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+}

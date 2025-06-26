@@ -1,0 +1,35 @@
+/* front_end/src/pages/dashboardadmin/gestorEspecialidades/ListaEspecialidades.css */
+.gestor-especialidades {
+  padding: 1rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-add {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+.action-icon {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.delete {
+  color: red;
+}
