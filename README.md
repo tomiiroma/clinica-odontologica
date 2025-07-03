@@ -97,6 +97,7 @@ El diseño del sistema sigue una **arquitectura en tres capas**:
 - Daniel Fernández
 - Fernando Blanco
 - Tomás Roma
+- Juan Cruz Vidal
 
 **Materia:** Diseño de Sistemas  
 
